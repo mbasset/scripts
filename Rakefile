@@ -105,9 +105,11 @@ task :version_bump do
 
 						system("git add .")
 						system("git commit -m \" Version bump engine to #{new_version}\"")
+						system("git tag #{new_version}")
 
 						unless ENV["NO_PUSH"]
 							system("git push")
+							system("git push --tags")
 						end
 					else
 
