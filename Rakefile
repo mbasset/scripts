@@ -105,7 +105,7 @@ task :version_bump do
 
 						system("git add .")
 						system("git commit -m \" Version bump engine to #{new_version}\"")
-						system("git tag #{new_version}")
+						system("git tag v#{new_version}")
 
 						unless ENV["NO_PUSH"]
 							system("git push")
@@ -117,7 +117,7 @@ task :version_bump do
 						system("git add Gemfile.lock")
 						system("git add .")
 						system("git commit -m \" Pushing new engine version #{new_version}\"")
-						system("git tag #{new_version}")
+						system("git tag v#{new_version}")
 
 						unless ENV["NO_PUSH"]
 							system("git push")
